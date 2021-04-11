@@ -1,0 +1,16 @@
+button,
+.btn,
+a {
+  @apply inline-block no-underline appearance-none transition-all duration-300;
+
+  &:disabled {
+    @apply cursor-not-allowed;
+  }
+}
+
+.btn--cover {
+  &::before {
+    content: '';
+    @apply absolute inset-0 w-full h-full z-10;
+  }
+}

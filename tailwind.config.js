@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: {
     enabled: false,
@@ -27,6 +29,7 @@ module.exports = {
       auto: 'auto',
       0: '0px',
       1: '1px',
+      2: '2px',
       5: '5px',
       10: '10px',
       15: '15px',
@@ -95,6 +98,10 @@ module.exports = {
       ],
     },
     extend: {
+      colors: {
+        orange: colors.orange,
+        teal: colors.teal,
+      },
       zIndex: {
         negative: -1,
       },
@@ -119,7 +126,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      translate: ['group-hover'],
+    },
   },
   corePlugins: {
     container: false,
