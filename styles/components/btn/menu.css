@@ -1,0 +1,38 @@
+.btn--menu {
+  @apply relative flex items-center w-30 min-w-30 h-15 min-h-15;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn--menu__inner {
+  @apply transition-all duration-300 bg-gray-800 absolute w-30 min-w-30 h-2;
+
+  &:before,
+  &:after {
+    @apply transition-all duration-300 bg-gray-800 absolute inset-x-0 overflow-hidden w-30 min-w-30 h-2;
+    content: '';
+  }
+
+  &:before {
+    top: -6px;
+  }
+
+  &:after {
+    bottom: -6px;
+  }
+}
+
+.btn--menu.is-active .btn--menu__inner {
+  transform: rotate(45deg);
+}
+
+.btn--menu.is-active .btn--menu__inner:before {
+  top: 0;
+  opacity: 0;
+}
+
+.btn--menu.is-active .btn--menu__inner:after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}

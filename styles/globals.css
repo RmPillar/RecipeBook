@@ -1,13 +1,9 @@
 @import 'tailwindcss/base';
 
-@import 'animations';
+@import 'base';
 
 @import 'components/btn/btn';
 
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
-
-body {
-  @apply font-inter;
-}

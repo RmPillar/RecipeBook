@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-import Logo from '../global/Logo';
 import BtnNav from '../btn/BtnNav';
+import BtnMenu from '../btn/BtnMenu';
+import Logo from '../global/Logo';
 
 function Header() {
+  const [menuActive, setMenuActive] = useState(false);
+
   return (
     <section className='site-header w-full'>
       <div className='flex items-center py-20 px-30 space-x-30'>
@@ -25,6 +28,8 @@ function Header() {
         <Link href='/login' passHref>
           <BtnNav label='Login' />
         </Link>
+
+        <BtnMenu menuActive={menuActive} setMenuActive={setMenuActive} />
       </div>
     </section>
   );
