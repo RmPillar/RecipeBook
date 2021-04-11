@@ -80,6 +80,20 @@ module.exports = {
     minHeight: (theme) => ({
       ...theme('spacing'),
     }),
+    fontFamily: {
+      inter: [
+        'Inter',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
+        '-apple-system',
+        'sans-serif',
+      ],
+    },
     extend: {
       zIndex: {
         negative: -1,
