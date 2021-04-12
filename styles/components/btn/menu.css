@@ -6,11 +6,11 @@
 }
 
 .btn--menu__inner {
-  @apply transition-all duration-300 bg-gray-800 absolute w-30 min-w-30 h-2;
+  @apply transition-all duration-300 bg-white absolute w-30 min-w-30 h-2;
 
   &:before,
   &:after {
-    @apply transition-all duration-300 bg-gray-800 absolute inset-x-0 overflow-hidden w-30 min-w-30 h-2;
+    @apply transition-all duration-300 bg-white absolute inset-x-0 overflow-hidden w-30 min-w-30 h-2;
     content: '';
   }
 

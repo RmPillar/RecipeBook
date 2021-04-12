@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 import BtnNav from '../btn/BtnNav';
 import BtnMenu from '../btn/BtnMenu';
 import Logo from '../global/Logo';
 
-function Header() {
-  const [menuActive, setMenuActive] = useState(false);
-
+function Header({ menuActive, setMenuActive }) {
   return (
-    <section className='site-header w-full'>
+    <header className='site-header absolute top-0 w-full z-20'>
       <div className='flex items-center py-20 px-30 space-x-30'>
         <Link href='/'>
-          <a className='mr-auto'>
+          <a className='mr-auto text-white'>
             <Logo />
           </a>
         </Link>
@@ -31,7 +29,7 @@ function Header() {
 
         <BtnMenu menuActive={menuActive} setMenuActive={setMenuActive} />
       </div>
-    </section>
+    </header>
   );
 }
 
