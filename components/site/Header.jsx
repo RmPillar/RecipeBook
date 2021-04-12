@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import BtnNav from '../btn/BtnNav';
 import BtnMenu from '../btn/BtnMenu';
-import Logo from '../global/Logo';
+import Logo from './Logo';
 
 function Header({ menuActive, setMenuActive }) {
   return (

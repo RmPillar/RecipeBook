@@ -24,7 +24,7 @@ const MobileMenu = ({ menuActive }) => {
       ></div>
       <div
         className={classNames(
-          'h-screen w-screen fixed inset-0 bg-teal-500 transform transition-transform duration-500 delay-200 ease-in-out z-10',
+          'h-screen w-screen fixed inset-0 bg-teal-500 transform transition-transform duration-500 delay-150 ease-in-out z-10',
           {
             'translate-x-full': !menuActive,
           }
@@ -32,17 +32,19 @@ const MobileMenu = ({ menuActive }) => {
       >
         <div className='flex flex-col w-full h-full px-30 pt-120 space-y-50'>
           <Link href='/my-recipes'>
-            <a className='text-3xl text-white font-medium uppercase '>
+            <a className='text-4xl tracking-wider text-white font-light'>
               My Recipes
             </a>
           </Link>
           <Link href='/conversions'>
-            <a className='text-3xl text-white font-medium uppercase '>
+            <a className='text-4xl tracking-wider text-white font-light'>
               Conversions
             </a>
           </Link>
           <Link href='/login'>
-            <a className='text-3xl text-white font-medium uppercase '>Login</a>
+            <a className='text-4xl tracking-wider text-white font-light'>
+              Login
+            </a>
           </Link>
         </div>
       </div>

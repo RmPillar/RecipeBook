@@ -1,15 +1,30 @@
 import Page from '../components/site/Page';
+import Hero from '../components/global/Hero';
 
-import HeroBase from '../assets/svg/hero-base.svg';
-
-export default function Home() {
+export default function Home({ data, recipes }) {
   return (
     <Page>
-      <div className='w-screen h-screen bg-indigo-500 relative'>
-        <span className='w-screen absolute bottom-0 text-white'>
-          <HeroBase />
-        </span>
-      </div>
+      <Hero data={data.hero} />
     </Page>
   );
+}
+
+export async function getStaticProps(context) {
+  const recipesRes = await fetch(
+    `https://recipe-book-be.herokuapp.com/api/recipes`
+  );
+  const dataRes = await fetch('http://localhost:3000/api/home');
+
+  const recipes = await recipesRes.json();
+  const data = await dataRes.json();
+
+  if (!recipes) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { recipes, data },
+  };
 }

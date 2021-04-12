@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 
 @import 'base';
+@import 'layout';
 
 @import 'components/btn/btn';
 
