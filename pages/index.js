@@ -1,10 +1,12 @@
 import Page from '../components/site/Page';
 import Hero from '../components/global/Hero';
+import RecipeList from '../components/home/RecipeList';
 
 export default function Home({ data, recipes }) {
   return (
     <Page>
-      <Hero data={data.hero} />
+      <Hero data={data.hero} classes='mb-100 xl:mb-150' />
+      <RecipeList recipes={recipes.recipes} />
     </Page>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import RecipeBook from '../../assets/svg/recipebook.svg';
 
-function Logo(props) {
+function Logo() {
   return (
     <span className='flex items-center'>
       <span className='block w-45 min-w-45 mr-10'>

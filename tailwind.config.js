@@ -125,6 +125,9 @@ module.exports = {
         screen: '100vh',
         screen80: '80vh',
       },
+      borderRadius: {
+        10: '10px',
+      },
     },
   },
   variants: {
