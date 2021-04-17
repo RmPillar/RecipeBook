@@ -13,7 +13,7 @@ function Hero({ data, classes }) {
     >
       <div className='container h-full'>
         <div className='flex flex-col justify-center h-full pb-20 xl:pb-70'>
-          <h1 className='text-5xl lg:text-8xl xl:text-9xl font-bold text-white mb-20'>
+          <h1 className='text-5xl lg:text-8xl xl:text-9xl font-extrabold text-white tracking-tight leading-tight mb-20'>
             {data.heading}
           </h1>
           <h6 className='text-xl lg:text-3xl text-white font-thin'>
