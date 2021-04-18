@@ -2,6 +2,7 @@
 
 @import 'base';
 @import 'layout';
+@import 'utilities';
 
 @import 'components/btn/btn';
 
