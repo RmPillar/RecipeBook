@@ -39,15 +39,15 @@ export const secondsToTimeString = (seconds) => {
   }
 
   if (numberOfMinutes === 1) {
-    time[3] = `${numberOfMinutes} minute`;
+    time[3] = `${numberOfMinutes} min`;
   } else if (numberOfMinutes > 1) {
-    time[3] = `${numberOfMinutes} minutes`;
+    time[3] = `${numberOfMinutes} mins`;
   }
 
   if (numberOfSeconds === 1) {
-    time[4] = `${numberOfSeconds} second`;
+    time[4] = `${numberOfSeconds} s`;
   } else if (numberOfSeconds > 1) {
-    time[4] = `${numberOfSeconds} seconds`;
+    time[4] = `${numberOfSeconds} s`;
   }
 
   let filteredTime = time.filter(Boolean);

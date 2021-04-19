@@ -9,16 +9,14 @@ import Hard from '../../assets/svg/hard.svg';
 
 import { secondsToTimeString, toNameCase } from '../../utils';
 
-function RecipeCard({ recipe: { categories, duration, difficulty, name } }) {
+function RecipeCard({ recipe: { categories, total_time, difficulty, name } }) {
   return (
-    <article className='flex flex-col w-full rounded-10 overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-500 group'>
+    <article className='flex flex-col w-full rounded-10 overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500'>
       <div className='pt-6/12 bg-green-500 relative'>
         <img
           src='https://i2.wp.com/completelydelicious.com/wp-content/uploads/2021/02/yeast-raised-doughnuts-6-660x880.jpg'
           className='object-cover-absolute'
         />
-
-        <div className='absolute inset-0 bg-gray-900 bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-500'></div>
 
         <div className='flex space-x-10 absolute bottom-0 right-0 mr-10 transform translate-y-6/12'>
           {categories.map((category, index) => {
@@ -26,7 +24,7 @@ function RecipeCard({ recipe: { categories, duration, difficulty, name } }) {
           })}
         </div>
       </div>
-      <div className='flex flex-col h-full p-20'>
+      <div className='flex flex-col h-full px-20 pt-40 pb-30 relative z-10'>
         <div className='flex items-center mb-30'>
           <div className='flex items-center mr-20'>
             <span className='block w-20 min-w-20 mr-5'>
@@ -34,7 +32,7 @@ function RecipeCard({ recipe: { categories, duration, difficulty, name } }) {
             </span>
 
             <span className='text-sm font-light'>
-              {secondsToTimeString(duration)}
+              {secondsToTimeString(total_time)}
             </span>
           </div>
 
