@@ -7,7 +7,7 @@ function Hero({ data, classes }) {
   return (
     <div
       className={classNames(
-        'w-screen h-screen80 bg-indigo-500 relative',
+        'w-screen min-h-500 lg:min-h-600 flex items-center bg-indigo-500 relative',
         classes
       )}
     >

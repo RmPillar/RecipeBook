@@ -4,9 +4,13 @@ import Page from '../../components/site/Page';
 import Hero from '../../components/recipe/Hero';
 
 function SingleRecipe({ data }) {
+  console.log(data);
   return (
     <Page dark={true}>
-      <Hero data={{ heading: data.name }} classes='mb-100 xl:mb-150' />
+      <Hero
+        data={{ heading: data.name, description: data.description }}
+        classes='mb-100 xl:mb-150'
+      />
     </Page>
   );
 }

@@ -10,7 +10,7 @@ function RecipeList({ recipes }) {
           {recipes.map((recipe, index) => {
             return (
               <div
-                className='column w-full md:w-6/12 xl:w-4/12 mb-30 flex'
+                className='column w-full md:w-10/12 xl:w-4/12 mx-auto mb-30 flex'
                 key={index}
               >
                 <RecipeCard recipe={recipe} />
