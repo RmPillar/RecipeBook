@@ -5,26 +5,34 @@ import BtnNav from '../btn/BtnNav';
 import BtnMenu from '../btn/BtnMenu';
 import Logo from './Logo';
 
-function Header({ menuActive, setMenuActive }) {
+import classNames from 'classnames';
+
+function Header({ menuActive, setMenuActive, dark }) {
+  console.log(dark);
   return (
-    <header className='site-header absolute top-0 w-full z-20'>
+    <header className='site-header absolute top-0 w-full z-20 '>
       <div className='flex items-center py-20 px-30 space-x-30'>
         <Link href='/'>
-          <a className='mr-auto text-white'>
+          <a
+            className={classNames('mr-auto', {
+              'text-white': !dark,
+              'text-gray-900': dark,
+            })}
+          >
             <Logo />
           </a>
         </Link>
 
         <Link href='/my-recipes' passHref>
-          <BtnNav label='My Recipes' />
+          <BtnNav label='My Recipes' dark={dark} />
         </Link>
 
         <Link href='/conversions' passHref>
-          <BtnNav label='Conversions' />
+          <BtnNav label='Conversions' dark={dark} />
         </Link>
 
         <Link href='/login' passHref>
-          <BtnNav label='Login' />
+          <BtnNav label='Login' dark={dark} />
         </Link>
 
         <BtnMenu menuActive={menuActive} setMenuActive={setMenuActive} />

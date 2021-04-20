@@ -1,14 +1,30 @@
 import React, { forwardRef } from 'react';
 
-const BtnNav = forwardRef(({ label, href }, ref) => {
+import classNames from 'classnames';
+
+const BtnNav = forwardRef(({ label, href, dark }, ref) => {
   return (
     <a
       href={href}
       ref={ref}
-      className='btn btn--nav relative uppercase tracking-widest group overflow-hidden text-white lg-max:hidden'
+      className={classNames(
+        'btn btn--nav relative uppercase tracking-widest group overflow-hidden lg-max:hidden',
+        {
+          'text-white': !dark,
+          'text-gray-900': dark,
+        }
+      )}
     >
       {label}
-      <span className='absolute w-full h-2 bg-white inset-x-0 bottom-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out'></span>
+      <span
+        className={classNames(
+          'absolute w-full h-2 inset-x-0 bottom-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out',
+          {
+            'bg-white': !dark,
+            'bg-gray-900': dark,
+          }
+        )}
+      ></span>
     </a>
   );
 });
