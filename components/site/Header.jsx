@@ -8,18 +8,17 @@ import Logo from './Logo';
 import classNames from 'classnames';
 
 function Header({ menuActive, setMenuActive, dark }) {
-  console.log(dark);
   return (
     <header className='site-header absolute top-0 w-full z-20 '>
       <div className='flex items-center py-20 px-30 space-x-30'>
         <Link href='/'>
           <a
-            className={classNames('mr-auto', {
+            className={classNames('mr-auto group', {
               'text-white': !dark,
               'text-gray-900': dark,
             })}
           >
-            <Logo />
+            <Logo dark={dark} />
           </a>
         </Link>
 

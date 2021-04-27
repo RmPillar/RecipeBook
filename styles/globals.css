@@ -1,4 +1,5 @@
 @import 'tailwindcss/base';
+@import '../node_modules/swiper/swiper-bundle.css';
 
 @import 'base';
 @import 'layout';

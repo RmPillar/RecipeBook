@@ -128,6 +128,10 @@ module.exports = {
       },
       borderRadius: {
         10: '10px',
+        40: '40px',
+      },
+      scale: {
+        '-100': '-1',
       },
     },
   },

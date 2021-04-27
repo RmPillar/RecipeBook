@@ -19,6 +19,11 @@ import Spaghetti from '../../assets/svg/spaghetti.svg';
 import Pot from '../../assets/svg/pot.svg';
 import Milkshake from '../../assets/svg/milkshake.svg';
 import RollingPin from '../../assets/svg/rolling-pin.svg';
+import Clock from '../../assets/svg/clock.svg';
+import Easy from '../../assets/svg/easy.svg';
+import Intermediate from '../../assets/svg/intermediate.svg';
+import Hard from '../../assets/svg/hard.svg';
+import Chevron from '../../assets/svg/chevron.svg';
 
 function SvgIcon({ icon, width, height }) {
   const ratio = Math.round((height / width) * 100, 2);
@@ -44,6 +49,11 @@ function SvgIcon({ icon, width, height }) {
       {icon === 'pasta' && <Spaghetti />}
       {icon === 'milkshakes_smoothies' && <Milkshake />}
       {icon === 'pastry' && <RollingPin />}
+      {icon === 'clock' && <Clock />}
+      {icon === 'easy' && <Easy />}
+      {icon === 'intermediate' && <Intermediate />}
+      {icon === 'hard' && <Hard />}
+      {icon === 'chevron' && <Chevron />}
     </span>
   );
 }

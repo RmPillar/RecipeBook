@@ -1,14 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 
 import RecipeCategory from './RecipeCategory';
-
-import Clock from '../../assets/svg/clock.svg';
-import Easy from '../../assets/svg/easy.svg';
-import Intermediate from '../../assets/svg/intermediate.svg';
-import Hard from '../../assets/svg/hard.svg';
+import SvgIcon from './SvgIcon';
 
 import { secondsToTimeString, toNameCase } from '../../utils';
-import Link from 'next/link';
 
 function RecipeCard({
   recipe: { categories, total_time, difficulty, name, recipe_id },
@@ -30,7 +26,7 @@ function RecipeCard({
           <div className='flex items-center justify-end mt-10 mb-5'>
             <div className='flex items-center mr-20'>
               <span className='block w-20 min-w-20 mr-5'>
-                <Clock />
+                <SvgIcon icon='clock' width={1} height={1} />
               </span>
 
               <span className='text-sm font-light'>
@@ -40,9 +36,7 @@ function RecipeCard({
 
             <div className='flex items-center'>
               <span className='block w-20 min-20 mr-5'>
-                {difficulty === 'easy' && <Easy />}
-                {difficulty === 'intermediate' && <Intermediate />}
-                {difficulty === 'hard' && <Hard />}
+                <SvgIcon icon={difficulty} width={1} height={1} />
               </span>
 
               <h6 className='font-light text-sm'>{toNameCase(difficulty)}</h6>
