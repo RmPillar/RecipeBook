@@ -4,8 +4,11 @@
 @import 'base';
 @import 'layout';
 @import 'utilities';
+@import 'animations';
 
 @import 'components/btn/btn';
+
+@import 'components/recipe/pagination';
 
 @import 'tailwindcss/components';
 

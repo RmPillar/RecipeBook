@@ -1,58 +1,81 @@
-import React, { useRef } from 'react';
+import { isNull } from 'lodash';
+import React, { useRef, useEffect, useState } from 'react';
 
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 
-import SvgIcon from '../global/SvgIcon';
+import RecipeSliderNext from './Slider/RecipeSliderNext';
+import RecipeSliderPrev from './Slider/RecipeSliderPrev';
+import RecipeSliderSlide from './Slider/RecipeSliderSlide';
 
 SwiperCore.use([Navigation, Pagination]);
 
 function RecipeSlider({ data }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const paginationRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const [slider, setSlider] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (
+      !isNull(slider) ||
+      isNull(containerRef.current) ||
+      isNull(nextRef.current) ||
+      isNull(prevRef.current) ||
+      isNull(paginationRef.current)
+    )
+      return;
+
+    setSlider(
+      new Swiper(containerRef.current, {
+        slidesPerView: 'auto',
+        speed: 500,
+        grabCursor: true,
+        navigation: {
+          nextEl: nextRef.current,
+          prevEl: prevRef.current,
+        },
+        pagination: {
+          el: paginationRef.current,
+          type: 'progressbar',
+        },
+        on: {
+          slideChangeTransitionEnd: function ({ activeIndex }) {
+            setCurrentSlide(activeIndex);
+          },
+        },
+      })
+    );
+
+    return () => {
+      if (isNull(slider)) return;
+      slider.destroy();
+      setSlider(null);
+    };
+  }, [containerRef, nextRef, prevRef, slider]);
 
   return (
-    <section className='recipe-slider bg-gradient-to-br from-orange-400 to-orange-600 relative'>
-      <Swiper
-        onInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-          swiper.navigation.init();
-          swiper.navigation.update();
-        }}
-      >
-        {data.instructions.map((instruction, index) => (
-          <SwiperSlide key={index}>
-            <div className='flex items-center justify-center min-h-screen h-screen min-w-screen w-screen'>
-              <div className='container'>
-                <div className='w-10/12 mx-auto'>
-                  <p className='text-white text-6xl text-center font-semibold tracking-wide leading-normal'>
-                    {instruction.body}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-        <button
-          className='absolute left-0 inset-y-0 z-10'
-          ref={prevRef}
-          style={{ outline: 'none' }}
-        >
-          <span className='block w-75 min-w-75 text-white transform rotate-180'>
-            <SvgIcon icon='chevron' width={1} height={1} />
-          </span>
-        </button>
-        <button
-          className='absolute right-0 inset-y-0 z-10'
-          ref={nextRef}
-          style={{ outline: 'none' }}
-        >
-          <span className='block w-75 min-w-75 text-white'>
-            <SvgIcon icon='chevron' width={1} height={1} />
-          </span>
-        </button>
-      </Swiper>
+    <section className='recipe-slider bg-gradient-to-br from-green-400 to-green-600 relative'>
+      <div className='swiper-container' ref={containerRef}>
+        <div className='swiper-wrapper'>
+          {data.instructions.map((instruction, index) => (
+            <RecipeSliderSlide
+              instruction={instruction}
+              currentSlide={currentSlide}
+              slideIndex={index}
+              key={instruction.instruction_id}
+            />
+          ))}
+        </div>
+      </div>
+      <RecipeSliderNext ref={nextRef} />
+      <RecipeSliderPrev ref={prevRef} />
+      <div
+        className='swiper-pagination absolute bottom-0 h-10 w-screen'
+        ref={paginationRef}
+      ></div>
     </section>
   );
 }

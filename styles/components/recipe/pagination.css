@@ -1,0 +1,6 @@
+.swiper-pagination-progressbar {
+  @apply bg-white bg-opacity-0;
+  .swiper-pagination-progressbar-fill {
+    @apply bg-white;
+  }
+}
