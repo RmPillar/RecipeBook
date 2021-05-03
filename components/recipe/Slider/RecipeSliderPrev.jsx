@@ -1,10 +1,13 @@
+import classNames from 'classnames';
 import React from 'react';
 
 import SvgIcon from '../../global/SvgIcon';
 
-const RecipeSliderPrev = React.forwardRef((props, ref) => (
+const RecipeSliderPrev = React.forwardRef(({ isHidden }, ref) => (
   <button
-    className='absolute left-0 inset-y-0 z-10'
+    className={classNames('absolute left-0 inset-y-0 z-10', {
+      'opacity-0 pointer-events-none': isHidden,
+    })}
     ref={ref}
     style={{ outline: 'none' }}
   >

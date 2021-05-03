@@ -1,11 +1,12 @@
-import { isNull } from 'lodash';
 import React, { useRef, useEffect, useState } from 'react';
-
-import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 
 import RecipeSliderNext from './Slider/RecipeSliderNext';
 import RecipeSliderPrev from './Slider/RecipeSliderPrev';
 import RecipeSliderSlide from './Slider/RecipeSliderSlide';
+
+import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
+
+import { nullCheck } from '../../utils';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -20,11 +21,13 @@ function RecipeSlider({ data }) {
 
   useEffect(() => {
     if (
-      !isNull(slider) ||
-      isNull(containerRef.current) ||
-      isNull(nextRef.current) ||
-      isNull(prevRef.current) ||
-      isNull(paginationRef.current)
+      !nullCheck(slider) ||
+      nullCheck(
+        containerRef.current,
+        nextRef.current,
+        prevRef.current,
+        paginationRef.current
+      )
     )
       return;
 
@@ -50,7 +53,7 @@ function RecipeSlider({ data }) {
     );
 
     return () => {
-      if (isNull(slider)) return;
+      if (nullCheck(slider)) return;
       slider.destroy();
       setSlider(null);
     };
@@ -70,12 +73,17 @@ function RecipeSlider({ data }) {
           ))}
         </div>
       </div>
-      <RecipeSliderNext ref={nextRef} />
-      <RecipeSliderPrev ref={prevRef} />
+
       <div
         className='swiper-pagination absolute bottom-0 h-10 w-screen'
         ref={paginationRef}
       ></div>
+
+      <RecipeSliderNext
+        ref={nextRef}
+        isHidden={currentSlide === data.instructions.length - 1}
+      />
+      <RecipeSliderPrev ref={prevRef} isHidden={currentSlide === 0} />
     </section>
   );
 }

@@ -3,8 +3,6 @@ import RecipeSlider from '../../../components/recipe/RecipeSlider';
 import Page from '../../../components/site/Page';
 
 function RecipeBaking({ instructions, ingredients }) {
-  console.log(instructions);
-  console.log(ingredients);
   return (
     <Page>
       <RecipeSlider data={instructions} />

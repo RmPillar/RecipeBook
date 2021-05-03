@@ -1,3 +1,5 @@
+import { isNull } from 'lodash';
+
 export const secondsToTimeString = (seconds) => {
   const days = Math.floor(seconds / 86400);
   if (days === 1) return `${days} day`;
@@ -25,4 +27,8 @@ export const parseQuantity = (num) => {
   const parsedNum = parseFloat(num);
 
   if (parsedNum > 0) return parsedNum;
+};
+
+export const nullCheck = (...args) => {
+  return args.map((arg) => isNull(arg)).includes(true);
 };
