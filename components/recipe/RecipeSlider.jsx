@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import RecipeSliderNext from './Slider/RecipeSliderNext';
 import RecipeSliderPrev from './Slider/RecipeSliderPrev';
 import RecipeSliderSlide from './Slider/RecipeSliderSlide';
+import RecipeSliderEndSlide from './Slider/RecipeSliderEndSlide';
 
 import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 
@@ -59,19 +60,26 @@ function RecipeSlider({ data }) {
     };
   }, [containerRef, nextRef, prevRef, slider]);
 
+  const slides = data.instructions.map((instruction, index) => (
+    <RecipeSliderSlide
+      instruction={instruction}
+      currentSlide={currentSlide}
+      slideIndex={index}
+      key={instruction.instruction_id}
+    />
+  ));
+
+  slides.push(
+    <RecipeSliderEndSlide
+      active={currentSlide === data.instructions.length}
+      key={0}
+    />
+  );
+
   return (
     <section className='recipe-slider bg-gradient-to-br from-green-400 to-green-600 relative'>
       <div className='swiper-container' ref={containerRef}>
-        <div className='swiper-wrapper'>
-          {data.instructions.map((instruction, index) => (
-            <RecipeSliderSlide
-              instruction={instruction}
-              currentSlide={currentSlide}
-              slideIndex={index}
-              key={instruction.instruction_id}
-            />
-          ))}
-        </div>
+        <div className='swiper-wrapper'>{slides}</div>
       </div>
 
       <div
@@ -81,7 +89,7 @@ function RecipeSlider({ data }) {
 
       <RecipeSliderNext
         ref={nextRef}
-        isHidden={currentSlide === data.instructions.length - 1}
+        isHidden={currentSlide === data.instructions.length}
       />
       <RecipeSliderPrev ref={prevRef} isHidden={currentSlide === 0} />
     </section>
