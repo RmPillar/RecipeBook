@@ -83,7 +83,7 @@ function RecipeSlider({ data }) {
       </div>
 
       <div
-        className='swiper-pagination absolute bottom-0 h-10 w-screen'
+        className='swiper-pagination absolute bottom-0 h-5 xl:h-10 w-screen'
         ref={paginationRef}
       ></div>
 

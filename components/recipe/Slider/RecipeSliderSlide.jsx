@@ -19,10 +19,10 @@ function RecipeSliderSlide({ instruction, currentSlide, slideIndex }) {
   return (
     <div className='swiper-slide flex items-center justify-center min-h-screen h-screen min-w-screen w-screen'>
       <div className='container'>
-        <div className='w-10/12 mx-auto'>
+        <div className='xl:w-10/12 mx-auto'>
           <p
             className={classNames(
-              'text-white text-6xl text-center font-semibold tracking-wide leading-normal',
+              'text-white text-3xl md:text-5xl xl:text-6xl text-center font-medium xl:font-semibold tracking-wide md-max:leading-normal md:leading-normal xl:leading-normal',
               { animate: slideIndex === currentSlide }
             )}
             data-animate='words-fade-up'
