@@ -13,7 +13,7 @@ export default function Home({ data, recipes }) {
 
 export async function getStaticProps({ req }) {
   let protocol = 'https:';
-  let host = req ? req.headers.host : window.location.hostname;
+  let host = req.headers.host;
   if (host.indexOf('localhost') > -1) {
     protocol = 'http:';
   }
