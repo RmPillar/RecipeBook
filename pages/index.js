@@ -15,13 +15,14 @@ export async function getStaticProps(context) {
   const recipesRes = await fetch(
     `https://recipe-book-be.herokuapp.com/api/recipes`
   );
-  console.log(process.env.VERCEL_URL);
-  const dataRes = await fetch(
-    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/home`
-  );
 
   const recipes = await recipesRes.json();
-  const data = await dataRes.json();
+  const data = {
+    hero: {
+      heading: 'RecipeBook',
+      tagline: 'All your baking needs in one simple place',
+    },
+  };
 
   if (!recipes) {
     return {
