@@ -15,7 +15,7 @@ export async function getStaticProps(context) {
   const recipesRes = await fetch(
     `https://recipe-book-be.herokuapp.com/api/recipes`
   );
-  const dataRes = await fetch('/api/home');
+  const dataRes = await fetch('recipe-book-psi.vercel.app/api/home');
 
   const recipes = await recipesRes.json();
   const data = await dataRes.json();
