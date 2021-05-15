@@ -8,7 +8,7 @@ const BtnBlock = forwardRef(({ label, href, classes }, ref) => {
       href={href}
       ref={ref}
       className={classNames(
-        'btn btn--block text-xl tracking-widest uppercase py-10 px-15 rounded-full bg-white group hover:bg-green-500 transition-colors duration-500 overflow-hidden',
+        'btn btn--block text-xl tracking-widest text-center uppercase py-10 px-15 rounded-full bg-white group hover:bg-green-500 transition-colors duration-500 overflow-hidden',
         classes
       )}
     >

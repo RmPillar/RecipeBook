@@ -16,7 +16,7 @@ function SingleRecipe({ data }) {
       <Link href={`${data.recipe_id}/baking`} passHref>
         <BtnBlock
           label='Start Baking'
-          classes='fixed bottom-0 right-0 mr-20 mb-20'
+          classes='fixed bottom-0 right-0 mr-20 mb-20 xl-max:hidden'
         />
       </Link>
     </Page>

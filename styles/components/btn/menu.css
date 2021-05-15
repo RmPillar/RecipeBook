@@ -1,16 +1,17 @@
 .btn--menu {
   @apply relative flex items-center w-40 min-w-40 h-15 min-h-15;
+
   &:focus {
     outline: none;
   }
 }
 
 .btn--menu__inner {
-  @apply transition-all duration-300 bg-white absolute w-40 min-w-40 h-2;
+  @apply transition-all duration-300 bg-current absolute w-40 min-w-40 h-2;
 
   &:before,
   &:after {
-    @apply transition-all duration-300 bg-white absolute inset-x-0 overflow-hidden w-40 min-w-40 h-2;
+    @apply transition-all duration-300 bg-current absolute inset-x-0 overflow-hidden w-40 min-w-40 h-2;
     content: '';
   }
 

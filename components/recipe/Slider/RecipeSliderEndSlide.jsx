@@ -60,12 +60,12 @@ function RecipeSliderEndSlide({ active }) {
           <Link href='/'>
             <a
               className={classNames(
-                'text-4xl tracking-wider text-white transition-opacity duration-500 relative group overflow-x-hidden py-5',
+                'text-4xl tracking-wider text-white transition-opacity duration-500 relative group overflow-x-hidden pt-5 pb-10',
                 { 'opacity-0': !showBackButton }
               )}
             >
               Finish Baking
-              <span className='absolute w-full h-2 inset-x-0 bottom-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out bg-white mr-1'></span>
+              <span className='absolute w-full h-5 inset-x-0 bottom-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out bg-white mr-1'></span>
             </a>
           </Link>
         </div>

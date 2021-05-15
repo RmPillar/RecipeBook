@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import classNames from 'classnames';
 
-const BtnNav = forwardRef(({ label, href, dark }, ref) => {
+const BtnNav = forwardRef(({ label, href, dark, classes = '' }, ref) => {
   return (
     <a
       href={href}
@@ -12,7 +12,8 @@ const BtnNav = forwardRef(({ label, href, dark }, ref) => {
         {
           'text-white': !dark,
           'text-gray-900': dark,
-        }
+        },
+        classes
       )}
     >
       {label}
