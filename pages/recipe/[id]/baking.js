@@ -14,6 +14,7 @@ function RecipeBaking({ instructions, ingredients, id }) {
           </span>
         </a>
       </Link>
+
       <RecipeSlider data={instructions} />
     </Page>
   );
