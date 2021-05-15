@@ -24,6 +24,7 @@ import Easy from '../../assets/svg/easy.svg';
 import Intermediate from '../../assets/svg/intermediate.svg';
 import Hard from '../../assets/svg/hard.svg';
 import Chevron from '../../assets/svg/chevron.svg';
+import Close from '../../assets/svg/close.svg';
 
 function SvgIcon({ icon, width, height }) {
   const ratio = Math.round((height / width) * 100, 2);
@@ -54,6 +55,7 @@ function SvgIcon({ icon, width, height }) {
       {icon === 'intermediate' && <Intermediate />}
       {icon === 'hard' && <Hard />}
       {icon === 'chevron' && <Chevron />}
+      {icon === 'close' && <Close />}
     </span>
   );
 }
