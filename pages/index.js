@@ -17,7 +17,7 @@ export async function getStaticProps(context) {
   );
   console.log(process.env.VERCEL_URL);
   const dataRes = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/home`
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/home`
   );
 
   const recipes = await recipesRes.json();
