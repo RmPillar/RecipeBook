@@ -8,25 +8,25 @@ const MobileMenu = ({ menuActive }) => {
     <>
       <div
         className={classNames(
-          'h-screen w-screen fixed inset-0 bg-teal-300 transform transition-transform duration-500 ease-in-out z-20',
+          'h-screen w-screen fixed inset-y-0 left-full bg-teal-300 max-w-400 transform transition-transform duration-500 ease-in-out z-20',
           {
-            'translate-x-full': !menuActive,
+            '-translate-x-full': menuActive,
           }
         )}
       ></div>
       <div
         className={classNames(
-          'h-screen w-screen fixed inset-0 bg-teal-400 transform transition-transform duration-500 delay-100 ease-in-out z-20',
+          'h-screen w-screen fixed inset-y-0 left-full bg-teal-400 max-w-400 transform transition-transform duration-500 delay-100 ease-in-out z-20',
           {
-            'translate-x-full': !menuActive,
+            '-translate-x-full': menuActive,
           }
         )}
       ></div>
       <div
         className={classNames(
-          'h-screen w-screen fixed inset-0 bg-teal-500 transform transition-transform duration-500 delay-150 ease-in-out z-20',
+          'h-screen w-screen fixed inset-y-0 left-full bg-teal-500 max-w-400 transform transition-transform duration-500 delay-150 ease-in-out z-20',
           {
-            'translate-x-full': !menuActive,
+            '-translate-x-full': menuActive,
           }
         )}
       >

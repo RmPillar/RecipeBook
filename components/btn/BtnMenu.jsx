@@ -6,7 +6,7 @@ const BtnMenu = ({ menuActive, setMenuActive, dark }) => {
 
   return (
     <button
-      className={classNames('btn btn--menu lg:hidden', {
+      className={classNames('btn btn--menu xl:hidden', {
         'is-active': menuActive,
         'text-white': !dark || menuActive,
         'text-gray-900': dark && !menuActive,

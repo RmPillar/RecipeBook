@@ -77,7 +77,7 @@ function RecipeSlider({ data }) {
   );
 
   return (
-    <section className='recipe-slider bg-orange-500 relative'>
+    <section className='recipe-slider bg-indigo-500 relative'>
       <div className='swiper-container' ref={containerRef}>
         <div className='swiper-wrapper'>{slides}</div>
       </div>
