@@ -1,0 +1,14 @@
+input,
+select,
+textarea {
+  @apply bg-transparent outline-none;
+}
+
+.input {
+  line-height: normal;
+  @apply block w-full appearance-none truncate transition-all duration-300;
+
+  &::placeholder {
+    @apply opacity-100;
+  }
+}

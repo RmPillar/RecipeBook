@@ -60,6 +60,7 @@ module.exports = {
       140: '140px',
       145: '145px',
       150: '150px',
+      300: '300px',
       400: '400px',
       500: '500px',
       600: '600px',
@@ -82,9 +83,11 @@ module.exports = {
     }),
     minWidth: (theme) => ({
       ...theme('spacing'),
+      screen: '100vw',
     }),
     minHeight: (theme) => ({
       ...theme('spacing'),
+      screen: '100vh',
     }),
     fontFamily: {
       inter: [
@@ -128,6 +131,7 @@ module.exports = {
         screen80: '80vh',
       },
       borderRadius: {
+        5: '5px',
         10: '10px',
         40: '40px',
       },

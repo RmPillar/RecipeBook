@@ -11,7 +11,7 @@ function Page({ children, dark = false }) {
   const headerClasses = router.asPath.includes('baking') ? 'hidden' : '';
 
   return (
-    <>
+    <main className='min-h-screen flex flex-col'>
       <Header
         menuActive={menuActive}
         setMenuActive={setMenuActive}
@@ -20,7 +20,7 @@ function Page({ children, dark = false }) {
       />
       <MobileMenu menuActive={menuActive} setMenuActive={setMenuActive} />
       {children}
-    </>
+    </main>
   );
 }
 
