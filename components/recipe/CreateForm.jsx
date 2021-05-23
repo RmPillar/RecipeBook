@@ -1,17 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormInput from '../form/FormInput';
-import FormTextarea from '../form/FormTextarea';
+import { FormInput, FormTextarea, FormSelect } from '../form';
 
 function CreateForm() {
   const {
     register,
+    control,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(watch('name'));
 
   return (
     <div className='container'>
@@ -22,7 +20,8 @@ function CreateForm() {
             name='name'
             placeholder='Recipe Name Here...'
             register={register}
-            required
+            errors={errors}
+            required={true}
           />
 
           <FormTextarea
@@ -30,7 +29,43 @@ function CreateForm() {
             name='description'
             placeholder='Describe Your Recipe...'
             register={register}
-            required
+            errors={errors}
+            required={true}
+          />
+
+          <div className='flex space-x-20'>
+            <FormInput
+              label='Quantity'
+              name='quantity'
+              placeholder='10'
+              register={register}
+              required={true}
+              errors={errors}
+              classes='w-6/12'
+            />
+            <FormInput
+              label='Unit'
+              name='unit'
+              placeholder='Buns'
+              register={register}
+              required={true}
+              errors={errors}
+              classes='w-3/12'
+            />
+          </div>
+
+          <FormSelect
+            label='Difficulty'
+            name='difficulty'
+            placeholder='Easy'
+            options={[
+              { label: 'Easy', value: 'Easy' },
+              { label: 'Intermediate', value: 'Intermediate' },
+              { label: 'Hard', value: 'Hard' },
+            ]}
+            control={control}
+            required={true}
+            errors={errors}
           />
 
           <input type='submit' />

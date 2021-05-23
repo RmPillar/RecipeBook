@@ -3,7 +3,7 @@ textarea {
 }
 
 .form-textarea {
-  @apply rounded-5 border-2 border-indigo-500 font-medium p-15 min-h-300;
+  @apply rounded-5 border-2 border-indigo-500 font-medium p-15 min-h-250;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 18px;
